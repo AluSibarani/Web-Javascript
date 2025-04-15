@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Gallery - My Simple Website</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+    <header>
+        <h1>Gallery</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <!-- Tombol toggle dark mode menggunakan ikon 🌓 -->
+        <button id="toggleDarkMode" title="Toggle Dark Mode">🌓</button>
+    </header>
+
+    <main>
+        <h2>Kumpulan Foto</h2>
+        <div class="gallery">
+            <img src="Foto/mssi.jpeg" alt="foto 1" width="315">
+            <img src="Foto/ronaldo.jpeg" alt="Foto 2" width="280">
+            <img src="Foto/neymar.jpeg" alt="Foto 2" width="355">
+            <img src="Foto/WhatsApp Image 2025-03-10 at 19.35.37_258d43f0.jpg" alt="Foto 3" width="315">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; ALU SHIAU SIBARANI</p>
+    </footer>
+
+    <!-- Script JavaScript untuk toggle dark mode -->
+    <script>
+        const toggleButton = document.getElementById('toggleDarkMode');
+        const body = document.body;
+
+        // Cek apakah user sebelumnya memilih dark mode
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            toggleButton.textContent = '🌓'; // Ubah icon ke bulan penuh (untuk mengaktifkan terang)
+        }
+
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                toggleButton.textContent = '🌓'; // Ubah icon ke bulan setengah (untuk mengaktifkan gelap)
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                body.classList.add('dark-mode');
+                toggleButton.textContent = '🌓'; // Ubah icon ke bulan penuh (untuk mengaktifkan terang)
+                localStorage.setItem('darkMode', 'enabled');
+            }
+        });
+    </script>
+
+</body>
+</html>

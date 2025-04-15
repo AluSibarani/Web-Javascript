@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Blog - My Simple Website</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <header>
+        <h1>Blog</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <!-- Tombol untuk toggle dark mode -->
+        <button id="toggleDarkMode" title="Toggle Dark Mode">🌓</button>
+    </header>
+    <main>
+        <article>
+            <h2>Artikel 1: LIONEL MESSI</h2>
+            <p>Lionel Messi lahir pada 24 Juni 1987 di Rosario, Argentina. Sejak kecil, bakatnya dalam sepak bola sudah terlihat.  Pada usia 13 tahun, ia pindah ke Spanyol untuk bergabung dengan akademi La Masia milik FC Barcelona Messi melakukan debut untuk tim utama
+                Barcelona pada tahun 2004. Sejak itu, ia menjadi pemain kunci,
+                memenangkan berbagai gelar termasuk 10 La Liga dan 4 Liga Champions. Ia juga meraih 8 Ballon d'Or (penghargaan pemain terbaik dunia).</p>
+        </article>
+        <article>
+            <h2>Artikel 2: CRISTIANO RONALDO</h2>
+            <p>Cristiano Ronaldo lahir pada 5 Februari 1985 di Madeira, Portugal. Ia memulai karier profesionalnya di Sporting CP sebelum direkrut Manchester United pada 2003. Di bawah asuhan Sir Alex Ferguson, 
+                ia berkembang pesat dan memenangkan tiga gelar Liga Inggris serta satu Liga Champions.</p>
+        </article>
+        <article>
+            <h2>Artikel 3: Neymar da Silva Santos Júnior</h2>
+            <p>Neymar da Silva Santos Júnior lahir pada 5 Februari 1992 di Mogi das Cruzes, Brasil. Ia mulai menonjol di klub Santos, tempat ia memenangkan Copa Libertadores 2011.Pada 2013, 
+                Neymar pindah ke Barcelona, membentuk trio "MSN" bersama Messi dan Suárez. Ia memenangkan banyak gelar, 
+                termasuk treble (La Liga, Copa del Rey, dan Liga Champions) pada 2015.</p>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; ALU SHIAU SIBARANI</p>
+    </footer>
+
+    <!-- Script untuk toggle dark mode -->
+    <script>
+        const toggleButton = document.getElementById('toggleDarkMode');
+        const body = document.body;
+
+        // Cek apakah user sebelumnya memilih dark mode
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            toggleButton.textContent = '🌓'; // Ubah icon ke bulan penuh
+        }
+
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                toggleButton.textContent = '🌓'; // Kembali ke bulan setengah
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                body.classList.add('dark-mode');
+                toggleButton.textContent = '🌓'; // Ubah icon ke bulan penuh
+                localStorage.setItem('darkMode', 'enabled');
+            }
+        });
+    </script>
+</body>
+</html>
